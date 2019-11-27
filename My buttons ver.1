@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -6,9 +7,170 @@
 <script></script>
 <link>
 <style>
-.body{
-display: grid;
-grid-template-column:50% 50%;
+.container{
+	width: 100%;
+	max-width: 400px;
+	position: relative;
+}
+.container img{
+	width: 100%;
+	height:auto;
+}
+.container .b1{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	-ms- transform: translate(-50%, -50%);
+	font-size: 25px;
+	padding: 15px 25px;
+	border: 10px solid blue ;
+	border-radius: 50%;
+	width: 250px;
+	text-align: center;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8), 
+	0 6px 20px 0 rgba(0,0,0,0.8);
+}
+.container .b1:hover{
+	background-color: lightblue;
+	color: blue;
+}
+
+.b2{
+	display: inline-block;
+	text-align:center;
+	background-color: lightblue;
+	font-size: 25px;
+	padding: 15px 25px;
+	border: 10px solid blue;
+	border-radius: 50%;
+	margin: 15px;
+	width: 250px;
+	transition: all 0.5s;
+	cursor: pointer;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8), 
+	0 6px 20px 0 rgba(0,0,0,0.8);
+}
+.b2 span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5;
+}
+.b2 span:after{
+	content:'\00bb';
+	position: absolute;
+	opacity: 0;
+	top:0;
+	right: -20px;
+	transition: 0.5s;
+}
+.b2:hover span {
+	padding-right: 25px;
+	background-color: lightblue;
+	color: coral;
+}
+.b2:hover span:after {
+	opacity: 1;
+	right: 0;
+	background-color: pink;
+	color: coral;
+}
+.b3{
+	display: inline-block;
+	cursor: pointer;
+	text-decoration:none;
+	outline: none;
+	text-align: center;
+	font-size: 25px;
+	padding: 15px 25px;
+	border: 10px solid blue;
+	border-radius: 50%;
+	width: 250px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8), 
+	0 6px 20px 0 rgba(0,0,0,0.8);
+}
+.b3:hover{
+	background-color:#3e8e41;
+	color: orange;
+}
+.b3:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+.b4{
+	background-color: #f4511e;
+	text-align: center;
+	font-size: 25px;
+	color: white;
+	padding: 15px 25px;
+	margin: 4px 2px;
+	opacity: 0.6;
+	transition: 0.3;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	border: 10px solid blue;
+	border-radius: 50%;
+	width: 250px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8), 
+	0 6px 20px 0 rgba(0,0,0,0.8);
+}
+.b4:hover{opacity:1}
+.b5{
+	position: relative;
+	background-color: #4CAF50;
+	text-align: center;
+	color:#FFFFFF;
+	font-size: 25px;
+	padding: 15px 25px;
+	border: 10px solid blue;
+	border-radius: 50%;
+	width: 250px;
+	-webkit-transition-duration:0.4s;
+	transition-duration: 0.4s;
+	text-decoration: none;
+	overflow: hidden;
+	cursor: pointer;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8), 
+	0 6px 20px 0 rgba(0,0,0,0.8);
+}
+.b5:after{
+	content:"";
+	background:#f1f1f1;
+	display: block;
+	position: absolute;
+	padding-top: 300%;
+	padding-left: 350%;
+	margin-left: -20px !important;
+	margin-top: -120%;
+	opacity: 0;
+	transition: all 0.8s;
+}
+.b5:active:after{
+	padding:0;
+	margin:0;
+	opacity:1;
+	transition: 0s;
+}
+.b5:hover{
+	background-color: cornflowerblue;
+	color: white;
+}
+.b6{
+	text-align: center;
+	font-size: 25px;
+	padding: 15px 25px;
+	border: 10px solid blue;
+	border-radius: 50%;	
+	width: 250px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8), 
+	0 6px 20px 0 rgba(0,0,0,0.8);
+}
+.b6:hover{
+	background-color: aqua;
+	color: white;
 }
 </style>
 <meta name="buttons" content="practice buttons" >
@@ -16,23 +178,29 @@ grid-template-column:50% 50%;
 
 <body>
 
-<div>
-<button id="button1" style="background-color:pink">Button1</button>
+<div class="container">
+<img class="books" src="book on blue.JPG" alt="stack of books" width="100%"/>
+<button id="button1" class="b1" style="background-color:pink">Button1</button>
 </div>
-<div>
-<button id="button2" style="background-color: lightblue">Button2</button>
+
+<div >
+<button id="button2" class="b2" style="background-color: "lightblue" style="vertical-align:middle"><span>Button2</span></button>
 </div>
-<div>
-<button id="button3" style="background-color: lightgreen">Button3</button>
+
+<div >
+<button id="button3" class="b3" style="background-color: lightgreen">Button3</button>
 </div>
-<div>
-<button id="button4" style="background-color: peach">Button4</button>
+
+<div >
+<button id="button4" class="b4" style="background-color: lightcoral" >Button4</button>
 </div>
-<div>
-<button id="button5" style-" background-color: lavender">Button5</button>
+
+<div >
+<button id="button5" class="b5">Button5</button>
 </div>
-<div>
-<button id="button6" style="background-color: cornflowerblue">Button6</button>
+
+<div >
+<button id="button6" class="b6" style="background-color: cornflowerblue">Button6</button>
 </div>
 
 </body>
